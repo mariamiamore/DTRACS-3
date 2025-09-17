@@ -1,0 +1,446 @@
+/* ==================== */
+/*  Task Ongoing Styles */
+/* ==================== */
+
+.ongoing-app {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  margin-left: 20px;
+}
+
+.ongoing-main {
+  flex: 1;
+  padding: 0;
+  background-color: #ffffff;
+  border: none;
+  overflow-y: auto;
+  padding-top: 20px;
+}
+
+/* ==================== */
+/*  Date Group Header   */
+/* ==================== */
+
+.ongoing-date-group {
+  margin-bottom: 20px;
+}
+
+.ongoing-date-header {
+  font-size: clamp(15px, 2.5vw, 16px);
+  color: #000;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  user-select: none;
+  padding-top: 20px;
+  transition: color 0.2s ease;
+}
+
+.ongoing-date-header:hover {
+  color: #2196f3;
+}
+
+.ongoing-weekday {
+  color: #999;
+  font-weight: normal;
+}
+
+.ongoing-date-bold {
+  font-weight: bold;
+}
+
+.ongoing-header-actions {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  margin-left: auto;
+}
+
+.ongoing-task-count {
+  font-size: 12px;
+  margin-right: 10px;
+  color: #2196f3;
+  font-weight: bold;
+  background-color: rgba(33, 150, 243, 0.1);
+  padding: 4px 8px;
+  border-radius: 12px;
+}
+
+.ongoing-dropdown-arrow {
+  font-size: 20px;
+  color: #2196f3;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+
+.ongoing-dropdown-arrow::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.05);
+  transform: translate(-50%, -50%);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  z-index: -1;
+}
+
+.ongoing-dropdown-arrow:hover::after {
+  opacity: 1;
+}
+
+.ongoing-dropdown-arrow:hover {
+  transform: scale(1.2);
+}
+
+.ongoing-dropdown-arrow svg {
+  width: 26px;
+  height: 26px;
+  margin: 0;
+  padding: 0;
+}
+
+/* ==================== */
+/*  Task List Container */
+/* ==================== */
+
+.ongoing-task-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ==================== */
+/*  Task Item - Card    */
+/* ==================== */
+
+.ongoing-task-card {
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 16px;
+  padding-bottom: 8px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.ongoing-task-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transform: translateY(-2px);
+  border-color: #2196f3;
+}
+
+.ongoing-task-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 0;
+  background-color: #2196f3;
+  transition: height 0.3s ease;
+}
+
+.ongoing-task-card:hover::before {
+  height: 100%;
+}
+
+/* ==================== */
+/*  Task Header         */
+/* ==================== */
+
+.ongoing-task-content { /*content*/
+  display: flex;
+  align-items: center;
+  margin-bottom: 12px;
+  position: relative;
+  z-index: 1; 
+}
+
+.ongoing-task-icon {
+  width: 40px;
+  height: 40px;
+  background: #2196f3;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  margin-right: 12px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.ongoing-task-card:hover .ongoing-task-icon {
+  transform: scale(1.05);
+  background-color: #0d8bf2;
+}
+
+.ongoing-task-info{
+    flex: 1;
+    min-width: 0;
+  overflow: hidden;
+}
+
+.ongoing-task-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #000;
+  max-width: 600px;
+  margin: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  transition: color 0.2s ease;
+}
+
+.ongoing-task-card:hover .ongoing-task-title {
+  color: #2196f3;
+}
+
+.ongoing-task-office { /**/
+  font-size: clamp(12px, 2.5vw, 14px);
+  color: #555;
+  margin-top: 4px;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space:nowrap;
+}
+
+.ongoing-task-deadline {
+ font-size: 12px;
+  color: #555;
+  white-space: nowrap;
+  margin-left: auto;
+  flex-shrink: 0;
+  padding-left: 12px;
+  transition: color 0.2s ease;
+}
+
+.ongoing-task-card:hover .ongoing-task-deadline {
+  color: #2196f3;
+}
+
+/* ==================== */
+/*  Task Footer - Hidden by Default, Shown on Hover */
+/* ==================== */
+
+.ongoing-task-footer {
+  display: flex;
+  opacity: 0;
+  height: 0;
+  visibility: hidden;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0;
+  border-top: 1px solid transparent;
+  margin-top: 0;
+  transition: all 0.3s ease;
+ 
+  position: relative;
+  z-index: 1;
+}
+
+.ongoing-task-card:hover .ongoing-task-footer {
+  opacity: 1;
+  height: auto;
+  visibility: visible;
+  padding-top: 12px;
+  margin-top: 8px;
+  border-top-color: #eee;
+}
+
+.ongoing-description-link {
+  font-size: 12px;
+  color: #2196f3;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 6px 12px;
+  border-radius: 4px;
+  background-color: rgba(33, 150, 243, 0.1);
+  transition: all 0.2s ease;
+}
+
+.ongoing-description-link:hover {
+  text-decoration: none;
+  color: #fff;
+  background-color: #2196f3;
+  transform: translateY(-1px);
+}
+
+.ongoing-assigned-submitted-counts {
+  display: flex;
+  gap: 16px;
+  font-size: 12px;
+  color: #555;
+}
+
+.ongoing-count-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.ongoing-count-item:hover {
+  transform: translateY(-2px);
+}
+
+.ongoing-count-number {
+  font-weight: bold;
+  font-size: 14px;
+  color: #000;
+  transition: color 0.2s ease;
+}
+
+.ongoing-count-item:hover .ongoing-count-number {
+  color: #2196f3;
+}
+
+.ongoing-count-label {
+  font-size: 10px;
+  color: #888;
+  margin-top: 2px;
+  transition: color 0.2s ease;
+}
+
+.ongoing-count-item:hover .ongoing-count-label {
+  color: #666;
+}
+
+/* ==================== */
+/*  No Tasks Message    */
+/* ==================== */
+
+.ongoing-no-tasks {
+  text-align: center;
+  color: #888;
+  font-style: italic;
+  margin-top: 40px;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+/* M E D I A */
+
+@media (max-width: 768px) {
+   .ongoing-main{ /**/
+    position:relative; 
+    top: 40px; 
+    padding-top:0;
+    flex:1 0;
+  }
+
+  .ongoing-task-card {
+    padding: 0;
+    margin-right: 13px;
+    margin-bottom: 13px;
+    box-sizing: border-box;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    border: 1px solid #ddd;
+  }
+
+  .ongoing-task-info{/**/
+     position:absolute;
+    left:4rem;
+  }
+
+    .ongoing-date-header{ /**/
+    flex-wrap: wrap;
+    padding-top:0;
+    margin-bottom:8px;    
+  }
+
+  .ongoing-task-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+    gap: 4px; /*0*/
+    width: 100%;
+    padding: 10px;
+    position: relative;
+    z-index: 1;
+    margin-bottom:auto;
+  }
+
+  .ongoing-task-title {
+    font-size: 16px;
+    font-weight: bold;
+    color: #000;
+    margin: 0;
+    line-height: 1.3;
+    max-width: calc(100% - 52px);
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    word-break: break-word;
+    white-space:normal;
+  }
+
+
+  .ongoing-task-icon {
+   width: 40px;
+    height: 40px;
+    background: #2196f3;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    margin-right: 12px;
+    transition: transform 0.2s ease;
+    flex-shrink: 0;
+    margin-top: 0;
+  }
+
+  .ongoing-date-group{ /**/
+    margin-bottom: 10px;
+  }
+
+  .ongoing-task-deadline {
+   font-size: 11px;
+    color: #555;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    /* Left-aligned — no more right */
+    position:relative;
+    top:0.9rem;
+    left:2.65rem;
+    text-align: right;
+  }
+
+
+  .ongoing-task-footer { /**/
+    padding:8px;
+  }
+
+}

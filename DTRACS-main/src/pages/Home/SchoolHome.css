@@ -1,0 +1,44 @@
+.app-body {
+  display: flex;
+}
+
+/* Content area */
+.app-content {
+  flex: 1;
+  padding: 30px;
+  margin-left: 50px; /* default collapsed sidebar space */
+ 
+}
+
+/* When sidebar is expanded */
+.sidebar.expanded ~ .app-content {
+  margin-left: 200px;
+}
+
+/*overlapping */
+/*smaller device*/
+@media (max-width: 520px) {
+  .app-content {
+    /*margin-top:2rem;*/
+    margin-left:0px;
+    width: 100%;
+    width: auto;
+    padding:0;
+  }
+
+  .sidebar.expanded ~ .app-content {
+  margin-left: 0px;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-content {
+    /*margin-top:3rem;*/
+    margin-left:0px;
+    width: 100%;
+  }
+
+  .sidebar.expanded ~ .app-content {
+  left: 0px;
+  }
+} 
