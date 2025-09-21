@@ -41,7 +41,6 @@
 .card:hover { 
   transform: scale(1.02); /* Slight zoom on hover */
   border-radius: 20px solid black; /* Slightly rounder corners */
-
 }
 
 /* === TEXT INSIDE CARD === */
