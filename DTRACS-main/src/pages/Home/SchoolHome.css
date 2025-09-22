@@ -22,9 +22,10 @@
     margin-left:0px;
     width: 100%;
     padding:0;
+    transition: margin-left 0.3s; /* Smooth transition for sidebar toggle */
   }
 
-  .sidebar.expanded ~ .app-content {
-  left: 0px;
+  .sidebar.expanded ~ .app-content { /*overlapping sidebar from the schoolhome*/
+  margin-left: 0px;
   }
 } 

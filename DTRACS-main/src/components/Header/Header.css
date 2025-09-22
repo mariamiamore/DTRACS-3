@@ -239,6 +239,13 @@ hr {
     margin-right: 0; /* remove margin */
   }
 
+  .logo-w-text{
+    max-width: min(200px, 60vw);
+  }
+
+  .menu-btn{
+    margin-right:0;
+  }
   .header-left {
     gap: 0.5rem; /* smaller gap on small screens */
   }

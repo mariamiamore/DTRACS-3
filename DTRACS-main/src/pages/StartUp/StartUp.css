@@ -277,16 +277,14 @@
   .home-instruction-section {
     flex-direction: row; /* Stack arrow + text */
     justify-content: center;
-    gap: 1rem;
-  
+    align-items:center;
+    gap: 0.5rem;
+    position: relative;
+    bottom: 45px;
   }
 
   .home-instruction-text {
-  font-size: 16px;
-  font-weight: 300;
-  letter-spacing: 1px;
-  position: relative;
-  bottom: 45px;
+  font-size:14px;
   }
 
   .home-button-group {
@@ -311,7 +309,6 @@
 
   .home-arrow-icon {
   position: relative;
-  bottom: 43px;
   align-items:center;
   }
 

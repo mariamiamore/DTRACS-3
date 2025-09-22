@@ -222,7 +222,6 @@
 
    .pastdue-card {
      padding: 0;
-    margin-right: 13px;
     margin-bottom: 5px;
     box-sizing: border-box;
     border-radius: 8px;
@@ -281,7 +280,7 @@
   }
 
   .pastdue-card-deadline {
-  font-size: 12px;
+  font-size: 11px;
   color: #555;
   white-space: nowrap;
   flex-shrink: 0;
