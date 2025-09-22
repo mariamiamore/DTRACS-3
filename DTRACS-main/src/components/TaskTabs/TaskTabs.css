@@ -16,7 +16,7 @@
 
 /* Tab Link Base Style */
 .task-tab {
-  padding: 14px 0;
+  padding: 10px 0;
   color: #003366;
   font-size: 15px;
   cursor: pointer;
@@ -89,6 +89,7 @@
   padding-top: 10px;
   padding-bottom: 10px;
   margin-left: 20px;
+  white-space:nowrap;
 }
 
 .task-tabs {
@@ -98,7 +99,7 @@
 
 /* Tab Link Base Style */
 .task-tab {
-  padding: 14px 0;
+  padding: 10px 0;
   color: #003366;
   font-size: 15px;
   cursor: pointer;

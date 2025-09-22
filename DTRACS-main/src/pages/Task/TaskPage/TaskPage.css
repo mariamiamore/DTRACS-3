@@ -6,3 +6,10 @@
   min-height: 100vh;
 }
 
+@media (max-width: 768px) {
+  .task-layout {
+    margin-top:clamp(20px, 30px, 40px);
+    padding: 0 10px;
+  }
+}
+

@@ -99,6 +99,7 @@ const TaskHistory = () => {
                       return (
                         <div className="history-task-card" key={task.id}>
                           <div className="history-task-content">
+                          <div className="history-task-text">
                             <div className="history-task-icon">
                               <PiClipboardTextBold className="icon-lg" />
                             </div>
@@ -110,12 +111,15 @@ const TaskHistory = () => {
                                 {task.office}
                               </div>
                             </div>
+                            </div>
                             <div className="history-task-completion">
+                              <span className="history-completion-text">
                               Completed on {formatDate(completionDate)} at{" "}
                               <span className="history-time">{formatTime(completionDate)}</span>
-                            </div>
+                            </span>
+                              </div>
                           </div>
-
+ 
                           <div className="history-task-footer">
                             <Link
                               to={`/task/${task.sectionId}/${task.taskSlug}`}
@@ -151,7 +155,8 @@ const TaskHistory = () => {
                               </div>
                             </div>
                           </div>
-                        </div>
+                          </div>
+            
                       );
                     })}
                   </div>

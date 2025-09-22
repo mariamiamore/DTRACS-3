@@ -243,10 +243,6 @@
     margin-bottom: auto;
   }
 
-  .task-tabs-container {
-    overflow-x: auto;       /* kung sumisikip yung tabs, scroll na lang */
-  }
-
   .completed-card-title { /*title*/ /**/
   font-size: 16px;
     font-weight: bold;
